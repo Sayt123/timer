@@ -2,8 +2,6 @@
 
 ### RECOMPILE ALL YOUR PLUGINS THAT USE `#include <shavit>` OR STUFF WILL BREAK
 
-### CS:GO is dead. Support won't be removed and gamedata should:tm: still work but it isn't actively tested.
-
 [AlliedModders thread](https://forums.alliedmods.net/showthread.php?t=265456) // !!! OUTDATED !!!
 
 [Download](https://github.com/shavitush/bhoptimer/releases)
@@ -269,25 +267,12 @@ Player commands:
   - Makes slopes, teleporters, and more less random. Replaces `slopefix`
 * [HeadBugFix](https://github.com/GAMMACASE/HeadBugFix)
   - Fixes head bounding boxes when ducking so it's not possible to touch triggers through a roof.
-* [Showtriggers](https://forums.alliedmods.net/showthread.php?t=290356) ([github](https://github.com/1ci/showtriggers)) or [Eric's Edit](https://github.com/ecsr/showtriggers)
-  - Allows players to toggle trigger visibility.
 * [ShowPlayerClips](https://forums.alliedmods.net/showthread.php?p=2661942) ([github](https://github.com/GAMMACASE/ShowPlayerClips))
   - Allows players to toggle player clip visibility.
-* [JumpStats](https://github.com/Nimmy2222/bhop-get-stats)
-  - Covers SSJ, Jhud, StrafeTrainer, Strafe Offsets and FJT. Colors, HUD positioning editor, cookies, etc
-* [shavit-ssj](https://github.com/Nairdaa/shavit-ssj)
-  - Speed of Sixth Jump + more, customisable settings with cookies remembering user prefered settings.
-* [shavit-jhud](https://github.com/blankbhop/jhud)
-  - Jump HUD for bhoptimer. !jhud for settings.
-* [shavit-firstjumptick](https://github.com/Nairdaa/bhoptimer-firstjumptick)
-  - Displays what tick the player first jumps at upon leaving the startzone. Very useful for strafe maps, where you tryhard to cut that tick or two. !fjt to enable.
 * [sm_closestpos](https://github.com/rtldg/sm_closestpos)
   - C++ extension to efficiently find the closest replay position for calculating time-difference and velocity-difference.
-* [mpbhops_but_better](https://github.com/rtldg/mpbhops_but_working)
-  - A cleaner and faster mpbhops/mpbh plugin that also makes door vertical-boosters consistent and frozen.
-
-### CS:GO
-* [NoViewPunch](https://github.com/hermansimensen/NoViewPunch)
-  - Removes the viewpunch from landing in CS:GO.
-* [CS:GO Movement unlocker](https://forums.alliedmods.net/showthread.php?t=255298)
-  - Enables prespeeding (no 240 velocity cap for runspeed anymore)
+* [Player-Paint](https://github.com/1zc/Player-Paint)
+  - Client sided +paint plugin.
+* [improved-showtriggers](https://github.com/blankbhop/improved-showtriggers)
+  - Color coded, option filterable !showtriggers plugin.
+  
