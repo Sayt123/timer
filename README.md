@@ -275,4 +275,14 @@ Player commands:
   - Client sided +paint plugin.
 * [improved-showtriggers](https://github.com/blankbhop/improved-showtriggers)
   - Color coded, option filterable !showtriggers plugin.
-  
+* [NoclipSpeed](https://github.com/GAMMACASE/NoclipSpeed)
+ - Client noclip speed changing plugin.
+* [Light-Filters](https://github.com/reykz96/Light-Filters)
+ - !nv/!nightvision plugin to brighten or darken a map.
+* [shavit-discord](https://github.com/Sarrus1/shavit-discord)
+ - Discord record announcements via webhook.
+* [shavit-myreplay](https://github.com/BoomShotKapow/shavit-myreplay)
+ - Personal replay/bot plugin.
+ 
+# SQL scripts:
+[SurfTimer](https://github.com/surftimer/SurfTimer) compatible converter for zones. A work in progress still, the script is meant to be run in the same db as your ck_zones table. This generates a shavit compatible mapzones table that can then be used. There's still one or two fields left to figure out, and a conversion for the spawn positions.
