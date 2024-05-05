@@ -181,15 +181,23 @@ public void OnPluginStart()
 	gEV_Type = GetEngineVersion();
 
 	RegConsoleCmd("sm_cpmenu", Command_Checkpoints, "Opens the checkpoints menu.");
-	RegConsoleCmd("sm_cp", Command_Checkpoints, "Opens the checkpoints menu. Alias for sm_cpmenu.");
-	RegConsoleCmd("sm_checkpoint", Command_Checkpoints, "Opens the checkpoints menu. Alias for sm_cpmenu.");
+	RegConsoleCmd("sm_loclist", Command_Checkpoints, "Opens the checkpoints menu.");
+	RegConsoleCmd("sm_locs", Command_Checkpoints, "Opens the checkpoints menu.");
+	RegConsoleCmd("sm_savelocs", Command_Checkpoints, "Opens the checkpoints menu.");												  
 	RegConsoleCmd("sm_checkpoints", Command_Checkpoints, "Opens the checkpoints menu. Alias for sm_cpmenu.");
 	RegConsoleCmd("sm_save", Command_Save, "Saves a checkpoint.");
+	RegConsoleCmd("sm_saveloc", Command_Save, "Saves a checkpoint.");
+	RegConsoleCmd("sm_addloc", Command_Save, "Saves a checkpoint.");
 	RegConsoleCmd("sm_tele", Command_Tele, "Teleports to a checkpoint. Usage: sm_tele [number]");
 	RegConsoleCmd("sm_teleport", Command_Tele, "Teleports to a checkpoint. Usage: sm_tele [number]");
 	RegConsoleCmd("sm_prevcp", Command_PrevCheckpoint, "Selects the previous checkpoint.");
-	RegConsoleCmd("sm_nextcp", Command_NextCheckpoint, "Selects the next checkpoint.");
+	RegConsoleCmd("sm_teleprev", Command_PrevCheckpoint, "Selects the previous checkpoint.");																				  
+	RegConsoleCmd("sm_nextcp", Command_NextCheckpoint, "Selects the next checkpoint.");																  
+	RegConsoleCmd("sm_telenext", Command_NextCheckpoint, "Selects the next checkpoint.");
 	RegConsoleCmd("sm_deletecp", Command_DeleteCheckpoint, "Deletes the current checkpoint.");
+	RegConsoleCmd("sm_deleteloc", Command_DeleteCheckpoint, "Deletes the current checkpoint.");
+	RegConsoleCmd("sm_delloc", Command_DeleteCheckpoint, "Deletes the current checkpoint.");
+	RegConsoleCmd("sm_removeloc", Command_DeleteCheckpoint, "Deletes the current checkpoint.");
 	gH_CheckpointsCookie = RegClientCookie("shavit_checkpoints", "Checkpoints settings", CookieAccess_Protected);
 	gA_PersistentData = new ArrayList(sizeof(persistent_data_t));
 
@@ -939,6 +947,12 @@ public Action Command_PrevCheckpoint(int client, int args)
 	{
 		gI_CurrentCheckpoint[client]--;
 
+		// Teleport to the previous checkpoint
+		TeleportToCheckpoint(client, gI_CurrentCheckpoint[client], true, client);
+		
+		// Print to chat the checkpoint number
+		Shavit_PrintToChat(client, "Loaded tele #%d", gI_CurrentCheckpoint[client]);
+
 		if (ShouldReopenCheckpointMenu(client))
 		{
 			OpenCheckpointsMenu(client);
@@ -965,6 +979,13 @@ public Action Command_NextCheckpoint(int client, int args)
 	if (gI_CurrentCheckpoint[client] < gA_Checkpoints[client].Length)
 	{
 		gI_CurrentCheckpoint[client]++;
+
+		// Teleport to the next checkpoint
+		TeleportToCheckpoint(client, gI_CurrentCheckpoint[client], true, client);
+
+		// Print to chat the checkpoint number
+		Shavit_PrintToChat(client, "Loaded tele #%d", gI_CurrentCheckpoint[client]);
+
 
 		if (ShouldReopenCheckpointMenu(client))
 		{

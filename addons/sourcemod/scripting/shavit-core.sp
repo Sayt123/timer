@@ -312,37 +312,37 @@ public void OnPluginStart()
 
 	// commands START
 	// style
-	RegConsoleCmd("sm_style", Command_Style, "Choose your bhop style.");
-	RegConsoleCmd("sm_styles", Command_Style, "Choose your bhop style.");
-	RegConsoleCmd("sm_diff", Command_Style, "Choose your bhop style.");
-	RegConsoleCmd("sm_difficulty", Command_Style, "Choose your bhop style.");
+	RegConsoleCmd("sm_style", Command_Style, "Choose your surf style.");
+	RegConsoleCmd("sm_styles", Command_Style, "Choose your surf style.");
+	RegConsoleCmd("sm_diff", Command_Style, "Choose your surf style.");
+	RegConsoleCmd("sm_difficulty", Command_Style, "Choose your surf style.");
 	gH_StyleCookie = RegClientCookie("shavit_style", "Style cookie", CookieAccess_Protected);
 
 	// timer start
 	RegConsoleCmd("sm_start", Command_StartTimer, "Start your timer.");
 	RegConsoleCmd("sm_r", Command_StartTimer, "Start your timer.");
 	RegConsoleCmd("sm_restart", Command_StartTimer, "Start your timer.");
-	RegConsoleCmd("sm_m", Command_StartTimer, "Start your timer on the main track.");
-	RegConsoleCmd("sm_main", Command_StartTimer, "Start your timer on the main track.");
+	RegConsoleCmd("sm_m", Command_StartTimer, "Start your timer on the main map.");
+	RegConsoleCmd("sm_main", Command_StartTimer, "Start your timer on the main map.");
 	RegConsoleCmd("sm_ihate!main", Command_IHateMain, "If you really hate !main :(((");
 	gH_IHateMain = new Cookie("shavit_mainhater", "If you really hate !main :(((", CookieAccess_Protected);
 
-	RegConsoleCmd("sm_b", Command_StartTimer, "Start your timer on the bonus track.");
-	RegConsoleCmd("sm_bonus", Command_StartTimer, "Start your timer on the bonus track.");
+	RegConsoleCmd("sm_b", Command_StartTimer, "Start your timer on the bonus.");
+	RegConsoleCmd("sm_bonus", Command_StartTimer, "Start your timer on the bonus.");
 
 	for (int i = Track_Bonus; i <= Track_Bonus_Last; i++)
 	{
 		char cmd[10], helptext[50];
 		FormatEx(cmd, sizeof(cmd), "sm_b%d", i);
-		FormatEx(helptext, sizeof(helptext), "Start your timer on the bonus %d track.", i);
+		FormatEx(helptext, sizeof(helptext), "Start your timer on the bonus %d.", i);
 		RegConsoleCmd(cmd, Command_StartTimer, helptext);
 	}
 
 	// teleport to end
 	RegConsoleCmd("sm_end", Command_TeleportEnd, "Teleport to endzone.");
 
-	RegConsoleCmd("sm_bend", Command_TeleportEnd, "Teleport to endzone of the bonus track.");
-	RegConsoleCmd("sm_bonusend", Command_TeleportEnd, "Teleport to endzone of the bonus track.");
+	RegConsoleCmd("sm_bend", Command_TeleportEnd, "Teleport to endzone of the bonus.");
+	RegConsoleCmd("sm_bonusend", Command_TeleportEnd, "Teleport to endzone of the bonus.");
 
 	// timer stop
 	RegConsoleCmd("sm_stop", Command_StopTimer, "Stop your timer.");

@@ -278,7 +278,8 @@ public void OnPluginStart()
 	RegConsoleCmd("sm_rs", Command_StageRestart, "Teleports the player to the current stage. Only works on surf maps.");
 	RegConsoleCmd("sm_stagerestart", Command_StageRestart, "Teleports the player to the current stage. Only works on surf maps.");
 	RegConsoleCmd("sm_restartstage", Command_StageRestart, "Teleports the player to the current stage. Only works on surf maps.");
-
+	RegConsoleCmd("sm_teleport", Command_StageRestart, "Teleports the player to the current stage. Only works on surf maps.");
+				
 	RegConsoleCmd("sm_set", Command_SetStart, "Set current position as spawn location in start zone.");
 	RegConsoleCmd("sm_setstart", Command_SetStart, "Set current position as spawn location in start zone.");
 	RegConsoleCmd("sm_ss", Command_SetStart, "Set current position as spawn location in start zone.");
