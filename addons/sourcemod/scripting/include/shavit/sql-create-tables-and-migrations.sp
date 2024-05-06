@@ -174,7 +174,7 @@ public void SQL_CreateTables(Database hSQL, const char[] prefix, int driver)
 	//
 
 	FormatEx(sQuery, sizeof(sQuery),
-		"CREATE TABLE IF NOT EXISTS `%smaptiers` (`map` VARCHAR(255) NOT NULL, `tier` INT NOT NULL DEFAULT 1, PRIMARY KEY (`map`)) %s;",
+		"CREATE TABLE IF NOT EXISTS `%smaptiers` (`map` VARCHAR(255) NOT NULL, `tier` INT NOT NULL DEFAULT 1, `date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`map`)) %s;",
 		gS_SQLPrefix, sOptionalINNODB);
 	AddQueryLog(trans, sQuery);
 

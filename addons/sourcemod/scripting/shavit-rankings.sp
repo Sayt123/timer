@@ -159,7 +159,8 @@ public void OnPluginStart()
 	RegConsoleCmd("sm_top", Command_Top, "Show the top 100 players.");
 
 	RegAdminCmd("sm_settier", Command_SetTier, ADMFLAG_RCON, "Change the map's tier. Usage: sm_settier <tier> [map]");
-	RegAdminCmd("sm_setmaptier", Command_SetTier, ADMFLAG_RCON, "Change the map's tier. Usage: sm_setmaptier <tier> [map] (sm_settier alias)");
+	RegAdminCmd("sm_addmaptier", Command_SetTier, ADMFLAG_RCON, "Change the map's tier. Usage: sm_setmaptier <tier> [map]");
+	RegAdminCmd("sm_amt", Command_SetTier, ADMFLAG_RCON, "Change the map's tier. Usage: sm_setmaptier <tier> [map]");
 
 	RegAdminCmd("sm_recalcmap", Command_RecalcMap, ADMFLAG_RCON, "Recalculate the current map's records' points.");
 
